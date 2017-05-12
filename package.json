@@ -1,0 +1,50 @@
+{
+    "name": "ts-tslint",
+    "displayName": "TS-TSLint",
+    "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
+    "version": "0.0.2",
+    "publisher": "eg2",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+	"icon": "TSLint_icon.svg",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-ts-tslint.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-ts-tslint/issues"
+	},
+	"categories": [
+		"Languages",
+		"Linters"
+	],
+    "contributes": {
+        "typescriptServerPlugins": [
+            "tslint-language-service"
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "tslint-language-service": "^0.9.4", 
+        "tslint": "^5.1.0",
+        "typescript": "^2.3.2"
+    },
+    "extensionDependencies": [
+        "vscode.typescript"
+    ]
+}
