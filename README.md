@@ -1,12 +1,12 @@
 # vscode-ts-tslint (PREVIEW)
 
-Same as [vscode-tslint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) this extension integrates the [tslint](https://github.com/palantir/tslint) linter for the TypeScript language into VS Code. This integration uses the new TypeScript language server plugin support introduced in TypeScript version [2.3](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). It runs `tslint` as a plugin for the TypeScript language server.
+This is a preview of a work in progress reimplementation of the [vscode-tslint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) extension. It is published to enable early feedback and testing. The implementation uses the new TypeScript language server plugin support introduced in TypeScript version [2.3](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). It runs `tslint` as a plugin for the TypeScript language server.
 
-Please refer to the tslint [documentation](https://github.com/palantir/tslint) for how to configure the linting rules.
+The extension can be run side-by-side with the current `vscode-tslint` extension, use the Extensions Viewlet to disable the version of the extension you do not want to use.
 
 # Limitations
 
-This is a barebones preview and many of the features provided by the vscode-tslint extension are not yet provided. The currently implementation only supports linting and to auto fix a single rule failure, if the rule provides an autofix. There is no support for:
+This is a preview and many of the features provided by the vscode-tslint extension are not yet provided. The currently implementation supports linting and to auto fix a single rule failure, if the rule provides an autofix. There is no support for:
 - auto fix on save
 - revalidation when the `tslint.json` changes and you have to run the `Reload Window` command.
 
@@ -14,9 +14,10 @@ Due to an issue in the tslint implementation of the `no-unused-variable rule` ([
 
 # Differences between vscode-tslint and vscode-ts-tslint
 
-- the plugin shares the program representation with TypeScript. This is more efficient than the vscode-tslint extension which needs to reanalyze the document. 
-- Since vscode-tslint lints one file a time only, it cannot support tslint rules that require the type checker. The language service plugin doesn't have this limitation.
-- The vsocde-ts-tslint extension bundles a tslint version. 
+- enabling of tslint is now done inside the `tsconfig.json` by enabling the plugin (see below).
+- the implementation as a TypeScript server plugin enables to shares the program representation with TypeScript. This is more efficient than the vscode-tslint extension which needs to reanalyze a document that has already been analyzed by the TypeScript language server. 
+- vscode-tslint lints can only lint a file a time. It therefore cannot support [semantic tslint rules](https://palantir.github.io/tslint/usage/type-checking/) that require the type checker. The language service plugin doesn't have this limitation. To overcome this limitation is a key motivation for reimplementing the extension.
+- the extension bundles a tslint and typescript version. 
 
 # Setting up linting
 
