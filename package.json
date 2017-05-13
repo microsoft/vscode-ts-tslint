@@ -1,8 +1,8 @@
 {
     "name": "ts-tslint",
-    "displayName": "TS-TSLint",
+    "displayName": "TSLint (vnext)",
     "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "eg2",
     "engines": {
         "vscode": "^1.11.0"
