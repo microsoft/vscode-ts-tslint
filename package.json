@@ -2,7 +2,7 @@
     "name": "ts-tslint",
     "displayName": "TSLint (vnext)",
     "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "eg2",
     "engines": {
         "vscode": "^1.11.0"
@@ -40,8 +40,8 @@
         "@types/mocha": "^2.2.32"
     },
     "dependencies": {
-        "tslint-language-service": "^0.9.4", 
-        "tslint": "^5.1.0",
+        "tslint-language-service": "^0.9.6", 
+        "tslint": "^5.2.0",
         "typescript": "^2.3.2"
     },
     "extensionDependencies": [

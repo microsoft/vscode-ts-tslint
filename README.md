@@ -6,9 +6,7 @@ The extension can be run side-by-side with the current `vscode-tslint` extension
 
 # Limitations
 
-This is a preview and many of the features provided by the vscode-tslint extension are not yet provided. The currently implementation supports linting and to auto fix a single rule failure, if the rule provides an autofix. There is no support for:
-- auto fix on save
-- revalidation when the `tslint.json` changes and you have to run the `Reload Window` command.
+This is a preview and many of the features provided by the vscode-tslint extension are not yet provided. See this issue for the list of known gaps between `vscode-tslint`see this [issue](https://github.com/angelozerr/tslint-language-service/issues/32).
 
 Due to an issue in the tslint implementation of the `no-unused-variable rule` ([#2649](https://github.com/palantir/tslint/issues/2649)), this rule has to be disabled by the plugin. You can use the typescript compiler options `noUnusedLocals` and `noUnusedParameters` instead.
 
@@ -30,6 +28,23 @@ Enable the tslint-server-plugin in the `tsconfig.json` file of your project:
       { "name": "tslint-language-service"}
     ]
   }
+}
+```
+
+You can define additional settings for a `plugin`
+```json
+{
+    "compilerOptions": {
+        "plugins": [
+            {
+                "name": "tslint-language-service",
+                "alwaysShowRuleFailuresAsWarnings": false,
+                "ignoreDefinitionFiles": true
+                //"configFile": "../tslint.json",
+                //"disableNoUnusedVariableRule": false
+            }
+        ],
+    }
 }
 ```
 

@@ -83,7 +83,8 @@
         "triple-equals": [
             true,
             "allow-null-check"
-        ]
+        ],
+        "arrow-parens": true
     },
     "defaultSeverity": "warning"
 }
