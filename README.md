@@ -2,7 +2,7 @@
 
 This is a preview of a work in progress reimplementation of the [vscode-tslint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) extension. It is published to enable early feedback and testing. The implementation uses the new TypeScript language server plugin support introduced in TypeScript version [2.3](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). It runs `tslint` as a plugin for the TypeScript language server.
 
-The extension can be run side-by-side with the current `vscode-tslint` extension, use the Extensions Viewlet to disable the version of the extension you do not want to use.
+The extension can be installed side-by-side with the current `vscode-tslint` extension, use the Extensions Viewlet to disable the version of the extension you do not want to use.
 
 # Limitations
 
@@ -12,26 +12,14 @@ Due to an issue in the tslint implementation of the `no-unused-variable rule` ([
 
 # Differences between vscode-tslint (vnext) and vscode-tslint
 
-- enabling of tslint is now done inside the `tsconfig.json` by enabling a TypeScript server plugin (see below).
+- configuration options for tslint are now done inside the `tsconfig.json` in `plugins` section (see below). 
 - the implementation as a TypeScript server plugin enables to shares the program representation with TypeScript. This is more efficient than the current vscode-tslint implementation. The current implementation needs to reanalyze a document that has already been analyzed by the TypeScript language server. 
 - vscode-tslint can only lint one file a time. It therefore cannot support [semantic tslint rules](https://palantir.github.io/tslint/usage/type-checking/) that require the type checker. The language service plugin doesn't have this limitation. To overcome this limitation is a key motivation for reimplementing the extension.
 - the extension bundles a tslint and typescript version. 
 
-# Setting up linting
+# Configuring the tslint-server-plugin
 
-Enable the tslint-server-plugin in the `tsconfig.json` file of your project:
-
-```json
-{
-  "compilerOptions": {
-    "plugins": [
-      { "name": "tslint-language-service"}
-    ]
-  }
-}
-```
-
-You can define additional settings for a `plugin`
+You can define settings for the `tslint-language-service` plugin in the `tsconfig.json` file. The available settings are documented [here](https://github.com/angelozerr/tslint-language-service#configuration-options):
 ```json
 {
     "compilerOptions": {
