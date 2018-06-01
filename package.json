@@ -25,7 +25,9 @@
     ],
     "contributes": {
         "typescriptServerPlugins": [
-            "tslint-language-service"
+            {
+                "name": "tslint-language-service"
+            }
         ]
     },
     "dependencies": {
