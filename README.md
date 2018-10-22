@@ -38,7 +38,7 @@ You can define settings for the `tslint-language-service` plugin in the `tsconfi
 
 # Using a different version of tslint than the version that is bundled with the extension
 
-The extension comes with a particular version of tslint. If you want to use a different version then you have to use `npm` install the `tslint-languageservice` module and `tslint` as a peer to the TypeScript version you want to use. 
+The extension comes with a particular version of tslint. If you want to use a different version then you have to use `npm` install the `tslint-language-service` module and `tslint` as a peer to the TypeScript version you want to use. 
 The modules folder should have the following layout:
 - node_modules
   - typescript
