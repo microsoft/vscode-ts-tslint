@@ -1,3 +1,11 @@
+**❗DEPRECATED❗**
+
+This extension has been deprecated in favor of the [vscode-typescript-tslint-plugin](https://github.com/microsoft/vscode-typescript-tslint-plugin) extension.
+
+This repository has been superseded by [typescript-tslint-plugin](https://github.com/microsoft/typescript-tslint-plugin) and [vscode-typescript-tslint-plugin](https://github.com/microsoft/vscode-typescript-tslint-plugin)
+
+---
+
 # vscode-tslint(vnext) PREVIEW
 
 This is a preview of a work in progress reimplementation of the [vscode-tslint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) extension. It is published to enable early feedback and testing. The implementation uses the new TypeScript language server plugin support introduced in TypeScript version [2.3](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). It runs `tslint` as a plugin for the TypeScript language server.
